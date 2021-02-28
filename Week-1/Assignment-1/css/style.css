@@ -136,6 +136,21 @@ img {
   padding-bottom: 30px;
 }
 
+.CTA {
+  width: 100%;
+  margin:20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+button {
+  background-color: forestgreen;
+  width: 200px;
+  height: auto;
+  color : yellow;
+  font-size: 24px;
+  font-weight: bold;
+}
 
 
 /* ---- Footer ---- */
