@@ -7,8 +7,7 @@
 ==================================== */
 body {
   font-family: Helvetica, sans-serif;
-  margin: auto;
-  max-width: 1200px;
+  margin: 0;
 }
 
 p {
@@ -28,6 +27,11 @@ img {
   flex-direction: column;
 }
 
+.main-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* =================================
   Base Layout Styles
 ==================================== */
@@ -43,6 +47,7 @@ img {
 .main-header {
   padding-left: 0;
   text-align: center;
+  width: 100%;
 }
 
 .main-nav {
