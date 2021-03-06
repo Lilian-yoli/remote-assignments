@@ -1,9 +1,9 @@
-function binarySearchPosition(numbers, target) {
+ffunction binarySearchPosition(numbers, target) {
   // your code here
   let n = Math.floor(numbers.length/2)
   let a = 0
-  let b = numbers.length - 1
-  while (n >= 0){
+  let b = numbers.length
+  while ( a <= b ){
     if (target < numbers[n]){
       b = n - 1
       n = Math.floor((n - a)/2)
