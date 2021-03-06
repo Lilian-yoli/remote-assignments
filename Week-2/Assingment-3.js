@@ -1,49 +1,44 @@
 function count(input) {
-
-  function countArr(arr, num){
-    let result = 0;
-    for(let i = 0; i < arr.length; i++){
-      if(arr[i] === num){
-        result += 1
-      }
-    }
-    return result
-  }
-
+  // your code here
+  input.sort()
   let obj = {}
-  obj[input[0]] = 1;
-  for (let i = 1; i < input.length; i++){
-    for (let prop in obj){
-      if(input[i] !== prop){
-        obj[input[i]] = countArr(input, input[i])
-        break
-      }
+  let counter = 1
+  for (let i = 0; i < input.length; i++){
+    if (input[i] === input[i+1]){
+      counter ++
+    }
+    else {
+      obj[input[i]] = counter
+      counter = 1
     }
   }
   return obj
 }
 
-
 let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x'];
 
 console.log(count(input1));  // should print {a:3, b:1, c:2, x:1}
 
-function groupByKey(input) {
-  // your code here
-  function counter (arr, n){
-    let counterResult = 0;
-    for(let i = 0; i < arr.length; i++){
-      if(arr[i].key == n){
-        counterResult += arr[i].value;
-      }
-    }
-    return counterResult
-  }
 
-  let obj = {}
-  for (let i = 0; i < input.length; i++){
-    obj[input[i].key] = counter(input, input[i].key)
-  }
+// groupByKey function
+
+function groupByKey(input) {
+
+  arr = []
+  obj = {}
+
+  input.forEach(function(item) {
+    let existing = arr.filter(function(v, i) {
+      return v.key == item.key;
+    });
+    if (existing.length) {
+      let additem = obj[item.key] + item.value
+      obj[item.key] = additem;
+    } else {
+        obj[item.key] = item.value;
+        arr.push(item)
+    }
+  });
   return obj
 }
 

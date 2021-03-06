@@ -2,7 +2,7 @@ function binarySearchPosition(numbers, target) {
   // your code here
   let n = Math.floor(numbers.length/2)
   let a = 0
-  let b = numbers.length - 1
+  let b = numbers.length
   while (n >= 0){
     if (target < numbers[n]){
       b = n
