@@ -29,6 +29,7 @@
 // let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x'];
 //
 // console.log(count(input1));  // should print {a:3, b:1, c:2, x:1}
+debugger
 function groupByKey(input) {
 
   arr = []
@@ -53,24 +54,24 @@ let input2 = [     {key: 'a', value: 3},     {key: 'b', value: 1},     {key: 'c'
 console.log(groupByKey(input2));  // should print {a:6, b:1, c:7}
 
 
-function count(input) {
-  // your code here
-  input.sort()
-  let obj = {}
-  let counter = 1
-  for (let i = 0; i < input.length; i++){
-    if (input[i] === input[i+1]){
-      counter ++
-    }
-    else {
-      obj[input[i]] = counter
-      counter = 1
-    }
-  }
-  return obj
-}
-
-let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x'];
-
-console.log(count(input1));  // should print {a:3, b:1, c:2, x:1}
+// function count(input) {
+//   // your code here
+//   input.sort()
+//   let obj = {}
+//   let counter = 1
+//   for (let i = 0; i < input.length; i++){
+//     if (input[i] === input[i+1]){
+//       counter ++
+//     }
+//     else {
+//       obj[input[i]] = counter
+//       counter = 1
+//     }
+//   }
+//   return obj
+// }
+//
+// let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x'];
+//
+// console.log(count(input1));  // should print {a:3, b:1, c:2, x:1}
 </script>

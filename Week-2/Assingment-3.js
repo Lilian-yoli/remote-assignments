@@ -1,21 +1,25 @@
 function count(input) {
   // your code here
-  input.sort()
-  let obj = {}
-  let counter = 1
-  for (let i = 0; i < input.length; i++){
-    if (input[i] === input[i+1]){
-      counter ++
+  arr = []
+  obj = {}
+  input.forEach(function(item){
+
+    let existing = arr.filter(function(v){
+      return v == item
+    });
+    if (existing.length){
+      obj[item] += 1;
     }
     else {
-      obj[input[i]] = counter
-      counter = 1
+      obj[item] = 1
+      arr.push(item)
     }
-  }
+  })
   return obj
 }
 
 let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x'];
+
 
 console.log(count(input1));  // should print {a:3, b:1, c:2, x:1}
 
