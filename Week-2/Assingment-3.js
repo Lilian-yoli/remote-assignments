@@ -1,26 +1,13 @@
 function count(input) {
   // your code here
-  arr = []
-  obj = {}
-  input.forEach(function(item){
-
-    let existing = arr.filter(function(v){
-      return v == item
-    });
-    if (existing.length){
-      obj[item] += 1;
-    }
-    else {
-      obj[item] = 1
-      arr.push(item)
-    }
-  })
-  return obj
+  let map = input.reduce(function(prev, cur) {
+  prev[cur] = (prev[cur] || 0) + 1;
+  return prev;
+}, {});
+  return map
 }
 
 let input1 = ['a', 'b', 'c', 'a', 'c', 'a', 'x'];
-
-
 console.log(count(input1));  // should print {a:3, b:1, c:2, x:1}
 
 
