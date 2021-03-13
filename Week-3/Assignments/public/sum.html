@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sum Numbers</title>
+</head>
+
+<body>
+  <h1>Sum the Number</h1>
+  <form action="/sum.html" method="post">
+    <label>Please enter a number:</label>
+    <input id="inputNumber" type="text" name="inputnumber"></input>
+    <button type="submit">Submit</button>
+    <h1>The Result of parameter 10 is:</h1>
+    <div id="showResult10">
+
+    </div>
+  </form>
+
+  <script>
+    let requestSum10 = new XMLHttpRequest();
+    requestSum10.onreadystatechange = function(){
+      if ( requestSum10.readyState === 4 && requestSum10.status === 200){
+        document.getElementById("showResult10").innerHTML = requestSum10.responseText;
+        console.log(requestSum10.responseText)
+      };
+    };
+    requestSum10.open('GET', "/data?number=10");
+    requestSum10.send();
+  </script>
+</body>
+
+</html>

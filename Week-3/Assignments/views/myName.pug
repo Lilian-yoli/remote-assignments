@@ -1,0 +1,11 @@
+doctype html(lang='en')
+head
+  title Sum of Numbers
+  body
+    if ( name )
+      h1= name
+    else
+      form(action='/myName' method='post')
+        label Please enter your name:
+        input(type='text' name='username')
+        button Submit
