@@ -1,0 +1,171 @@
+/* Universal selector */
+*{
+  box-sizing: border-box;
+}
+
+/* =================================
+  Base Element Styles
+==================================== */
+
+body {
+  margin: 0;
+  padding: 12px 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* header selector */
+.devsite-header {
+  display: flex;
+  flex-direction: row;
+  padding: 0 24px;
+  justify-content:flex-start;
+  flex-grow: 1;
+}
+
+.devsite-header-logo {
+  height: 32px;
+  width: 185px;
+  margin: 0;
+}
+
+.devsite-header-nav {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.devsite-header-nav a {
+  text-decoration: none;
+  padding-left: 18px;
+  text-align: center;
+  color: #4c4d51
+}
+
+.devsite-header-search {
+  margin: 0 0 0 auto;
+}
+
+.devsite-header-btn-lng {
+  margin-left: 15px;
+}
+
+.devsite-header-user {
+  margin-left: 15px;
+}
+/* header-msg selector */
+
+.devsite-banner-msg {
+  width: 100%;
+  background-color: #000;
+  margin: 0;
+  margin-top: 12px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.devsite-banner-msg p {
+  padding: 24px 20px;
+}
+
+/* banner selector */
+
+.devsite-landing-banner{
+  display: flex;
+  margin: 0;
+  padding: 40px;
+  flex-direction: row;
+  width: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #f1f3f4;
+}
+
+.col {
+  padding-left: 15px;
+  flex: 1 50%;
+}
+
+.devsite-landing-banner-left{
+    display: block;
+    width: 50%;
+}
+
+.devsite-landing-banner-right{
+    width: 50%;
+}
+
+.devsite-landing-banner-headline {
+  margin: 0;
+  padding: 32px 0;
+  width: auto;
+  height: auto;
+  font-size: 44px;
+  color: rgb(26, 115, 232);
+}
+
+.devsite-landing-banner-paragraph {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  font-style: normal;
+}
+
+.devsite-landing-banner-ctablock{
+  margin: 0;
+  padding: 16px 0;
+}
+
+.devsite-landing-banner-cta {
+  margin: 0;
+  padding: 0;
+  height: 36px;
+  width: 108px;
+  background-color: #1a73eb;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+}
+
+.devsite-landing-banner-img {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100%;
+  text-align:center;
+  vertical-align: middle;
+
+}
+
+/* row1 selector */
+
+.devsite-landing-row1 {
+  margin: 0;
+  padding: 40px 0;
+}
+
+.devsite-landing-row1-headline {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 36px;
+}
+
+.devsite-landing-row1-inner {
+  margin: 0px;
+  padding: 0 24px;
+}
+
+.devsite-landing-row1-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 20px;
+}
