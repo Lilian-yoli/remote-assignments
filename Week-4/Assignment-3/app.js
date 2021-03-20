@@ -58,14 +58,15 @@ app.post("/", (req, res) => {
     let checkSql = 'SELECT email, password FROM posts WHERE email = ? AND password = ?';
     let errMsg = "";
 
-    if(mUsername && mPassword){
-        db.query(checkSql, post, (err, result) => {
+    if(mUsername && mPassword){ //Check if user type both email and password
+        db.query(checkSql, post, (err, result) => { //Check if the email matches password 
             if (result.length > 0) {
                 if(err) throw err;
                 console.log(result)
 				res.redirect(`/trackEmail?email=${req.body.inputUser}`);
 			} else {
-                errMsg = "Something went wrong with email or password";
+                //email or password unmatched database, maybe wrong email, passwor, or not yet signed up
+                errMsg = "Something went wrong with email or password. If not signed up yet, click the sign-up link.";
                 res.render('loginPage', {errMsg});
             };
         });
@@ -84,15 +85,16 @@ app.post("/signup", (req, res) => {
     let checkSql = 'SELECT email, password FROM posts WHERE email = ?';
     let setSql = 'INSERT INTO posts(email, password) VALUES(?, ?)';
     let errMsg = "";
-    
+
+    //Test if user enter email and password
     if(mUsername && mPassword){
-        db.query(checkSql, post, (err, result) => {
-            if (result.length > 0) {
+        db.query(checkSql, post, (err, result) => { 
+            if (result.length > 0) {  //Check if the email was in database
                 if(err) throw err;
                 errMsg = "The email is registered before...";
                 res.render('loginPage', {errMsg});
 			} else {
-                db.query(setSql, post, (err, result) => {
+                db.query(setSql, post, (err, result) => { //If not in database, add into database
                     if(err) throw err;
                     console.log(result)
                     res.redirect(`/trackEmail?email=${req.body.inputUserSignUp}`);
@@ -107,19 +109,20 @@ app.post("/signup", (req, res) => {
     }   
 });
 
-
+//Set cookie to record user's email
 app.get("/trackEmail", (req, res) => {
     let { email } = req.query;
     res.cookie('email', email)
     res.redirect("/welcome")
 })
 
+//Get /welcome page and show username
 app.get("/welcome", (req, res) => {
     res.render("welcome",{username: req.cookies.email})
 })
 
 
-
+//Set the server to port 3000
 app.listen ("3000", () => {
     console.log("Server started on port 3000")
 });

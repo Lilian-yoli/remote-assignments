@@ -7,7 +7,7 @@ if (errMsg !== "")
     h3= errMsg
 |   
 form#sign-in(action='/', method='POST')
-    label Username:
+    label Email:    
     |     
     input#inputUser(type='text', name='inputUser')
     |     
@@ -30,7 +30,7 @@ a.signUp-link(href='#') Sign-up here!
     h2 Member Sign-up
     |       
     form#sign-up(action='/signup', method='POST')
-        label Username:
+        label Email:    
         |         
         input#inputUser-signUp(type='text', name='inputUserSignUp')
         |         
