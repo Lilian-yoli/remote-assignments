@@ -1,0 +1,56 @@
+doctype html(lang='en')
+head
+    title Member Login Page
+  body
+    h1 Member Login
+    |   
+    form#sign-in(action='/sum.html', method='post')
+      label Username:
+      |     
+      input#inputUser(type='text', name='inputUser')
+      |     
+      br
+      |     
+      label Password:
+      |     
+      input#inputPass(type='text', name='inputPass')
+      |     
+      br
+      |     
+      button(type='submit') Submit
+      |     
+      p Not a member yet?
+      a.signUp-link(href='#') Sign-up here!
+      // Will display after clicking Sign-up
+      .sign-up-area(style='display:none')
+        hr
+        |       
+        h2 Member Sign-up
+        |       
+        form#sign-up(action='/sum.html', method='post')
+          label Username:
+          |         
+          input#inputUser-signUp(type='text', name='inputUser-signUp')
+          |         
+          br
+          |         
+          label Password:
+          |         
+          input#inputPass-signUp(type='text', name='inputPass-signUp')
+          |         
+          br
+          |         
+          button.signUped-btn(type='submit') Submit
+      |     
+      #showResult10
+    |   
+    script.
+      const signUpContent = document.querySelector(".sign-up-area");
+      const signUpLink = document.querySelector(".signUp-link");
+      const signUpBtn = document.querySelector(".signUped-btn");
+      signUpLink.addEventListener("click", () => {
+      signUpContent.style.display = "block";
+      })
+      signUpBtn.addEventListener("click", () => {
+      signUpContent.style.display = "none";
+      })

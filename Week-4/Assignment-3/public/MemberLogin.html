@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Member Login Page</title>
+</head>
+
+<body>
+  <h1>Member Login</h1>
+  <form id="sign-in" action="/sum.html" method="post">
+    <label>Username:</label>
+    <input id="inputUser" type="text" name="inputUser"></input>
+    <br>
+    <label>Password:</label>
+    <input id="inputPass" type="text" name="inputPass"></input>
+    <br>
+    <button type="submit">Submit</button>
+    <p>Not a member yet?</p><a class="signUp-link" href="#" >Sign-up here!</a>
+    
+    <!-- Will display after clicking Sign-up -->
+    <div class="sign-up-area" style="display:none">
+      <hr>
+      <h2>Member Sign-up</h2>
+      <form id="sign-up" action="/sum.html" method="post">
+        <label>Username:</label>
+        <input id="inputUser-signUp" type="text" name="inputUser-signUp"></input>
+        <br>
+        <label>Password:</label>
+        <input id="inputPass-signUp" type="text" name="inputPass-signUp"></input>
+        <br>
+        <button type="submit" class="signUped-btn">Submit</button>
+    </div>
+
+    <div id="showResult10">
+
+    </div>
+  </form>
+
+  <script>
+    const signUpContent = document.querySelector(".sign-up-area");
+    const signUpLink = document.querySelector(".signUp-link");
+    const signUpBtn = document.querySelector(".signUped-btn");
+
+    signUpLink.addEventListener("click", () => {
+      signUpContent.style.display = "block";
+    })
+    signUpBtn.addEventListener("click", () => {
+      signUpContent.style.display = "none";
+    })
+  </script>
+</body>
+
+</html>
